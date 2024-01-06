@@ -1,0 +1,20 @@
+respawnTemplates[] = { "Counter","MenuPosition", "MenuInventory", "Spectator" };
+respawnOnStart = -1;
+respawn = 3;
+respawnDialog = 0;
+respawnDelay = 15;
+
+// These are the roles that loadouts are organized into
+// You can include (or not) each one if you choose; just make sure they don't conflict.
+class CfgRoles
+{
+    #include "loadouts\Roles_standard.c"
+    #include "loadouts\Roles_SF.c"
+};
+
+// These are the loadouts themselves.
+class CfgRespawnInventory
+{
+    #include "loadouts\Loadouts_standard.c"
+    #include "loadouts\Loadouts_SF.c"
+};
