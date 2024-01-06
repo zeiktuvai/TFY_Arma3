@@ -8,6 +8,10 @@
         - SF: Special Forces loadouts (Only Divers as of right now.)
         - Night: (COMING SOON) Same as standard but with night time uniforms.
 4. On each player you will need to add the following into the init field:
-    - ```c [FACTION(west,east,independant,etc), LOADOUT NAME] call BIS_fnc_addRespawnInventory;```
-    - ```c [west, "TFY_Autorifleman"] call BIS_fnc_addRespawnInventory;```
+    ```c 
+    [FACTION(west,east,independant,etc), LOADOUT NAME] call BIS_fnc_addRespawnInventory;
+    ```
+    ```c 
+    [west, "TFY_Autorifleman"] call BIS_fnc_addRespawnInventory;
+    ```
     - If you want that player to have access to more than one, just add a new line with the same code but change the loadout class name to the one you want.
