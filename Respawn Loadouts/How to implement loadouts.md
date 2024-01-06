@@ -30,6 +30,7 @@ Each file contains the roles and the associated loadouts.  The roles are like a 
 
 Example loadout:
 ```c
+// Give it a unique class name prefaced with TFY_ (To avoid conflicts with the base game or other mods)
 class TFY_Commander
 {
     // Name displayed in the loadout selection drop down
@@ -84,4 +85,32 @@ class TFY_Commander
 };
 ```
 Below is an example of how the respawn menu looks.  Selecting a role in the middle changes what loadouts are available in the drop down on the right.
-![Example respawn selection menu.](image.png)
+![Example respawn selection menu.](img/respawn.png)
+
+**Roles**
+You do not need to add any roles unless there are none that fit the loadout you made.  Below is an example role:
+
+```c
+// Give it a unique class name prefaced with TFY_ (To avoid conflicts with the base game or other mods)
+class TFY_Assault
+{
+    // The name as displayed in the middle section of the respawn screen (see above)
+    displayName = "Assault";
+    // The icon for the role. (See the image below.)
+    icon = "a3\ui_f\data\gui\cfg\respawnroles\assault_ca.paa";
+};
+```
+![Arma Role Icons](img/role_icons.png)
+
+# Using these loadouts on mission start
+
+You can use these to load the loadout on mission start without going to each one in the arsenal and putting the loadout onto the player.
+
+In the player objects init field add the below code under your respawn loadout code:
+
+```c
+this setUnitLoadout (missionConfigFile >> "CfgRespawnInventory" >> "REPLACE WITH NAME OF LOADOUT CLASS FROM LOADOUT FILE");
+```
+
+**NOTE:** I am currently working on a loadout init script that will auto assign these loadouts on start and assign respawn loadouts based on the
+player objects properties.
