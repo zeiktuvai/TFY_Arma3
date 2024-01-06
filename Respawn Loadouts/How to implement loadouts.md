@@ -1,4 +1,4 @@
-# How to do the selectable loadouts
+# How to implement selectable loadouts on respawn
 
 1. Copy the loadouts folder into your mission folder.
 2. Make sure your `description.ext` contains the content from the [description.ext](/Respawn%20Loadouts/description.ext) in this folder.
@@ -9,9 +9,79 @@
         - Night: (COMING SOON) Same as standard but with night time uniforms.
 4. On each player you will need to add the following into the init field:
     ```c 
+    //Faction name (ie east, west, etc), Name of loadout class from loadout file
     [FACTION(west,east,independant,etc), LOADOUT NAME] call BIS_fnc_addRespawnInventory;
     ```
     ```c 
+    // example
     [west, "TFY_Autorifleman"] call BIS_fnc_addRespawnInventory;
     ```
     - If you want that player to have access to more than one, just add a new line with the same code but change the loadout class name to the one you want.
+
+# Role/Loadout File structure
+
+Each file contains the roles and the associated loadouts.  The roles are like a grouping of loadouts.  (I.E. Assault, support, Recon, etc).
+
+> When creating a loadout, follow the format as shown in one of the loadout files or below.  There are a few caveats to be aware of:
+> 1. Binoculars or similar items are considered weapons and go in the weapons array.
+> 2. Weapon attachments go in the LinkedItems array.
+> 3. Uniforms and Backpacks have their own variable.
+> 4. Everything else goes in the items array.
+
+Example loadout:
+```c
+class TFY_Commander
+{
+    // Name displayed in the loadout selection drop down
+    displayName = "Commander";
+    // Rank icon (just change captain to any of the others; private, corporal, sergeant, captain, etc.)
+    icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\captain_gs.paa";
+    // The name of the role from the role file for grouping
+    role = "TFY_Leader";
+
+    // List of weapons (Main, secondary, launcher, binos)
+    weapons[] = {
+        "rhs_weap_m16a4_imod_M203", "Rangefinder"
+    };
+    // Weapon ammo (The first mag,rocket is always loaded into the weapon.  So below 1 would be in the weapon, and 5 in the vest)
+    magazines[] = {
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",
+        "SmokeShellGreen",
+        "SmokeShellGreen",        
+        "HandGrenade",
+        "HandGrenade",        
+    };
+    // Any remaining items go here and are filled in the order of Uniform > Vest > Backpack
+    items[] = {
+        "ACE_EarPlugs",
+        "ACE_wirecutter",
+        "ACE_DefusalKit",
+        "ACE_MapTools",
+        "ACE_WaterBottle",
+        "ACE_packingBandage", 
+    };
+    // These are the items that have slots (i.e. weapon attachments or nvgs/goggles/gps/radio/etc.)
+    linkedItems[] = {
+        "rhsusf_iotv_ocp_Squadleader",
+        "rhsusf_opscore_rg_cover_pelt",
+        "rhsusf_oakley_goggles_clr",
+        "ItemCompass",
+        "ACE_Altimeter",
+        "ItemMap",
+        "ItemGPS",
+        "rhsusf_radio_anprc152",
+        "NVGogglesB_blk_F",        
+    };
+    // Uniform class name
+    uniformClass = "U_B_T_Soldier_SL_F";
+    // Backpack class name
+    backpack = "rhsusf_assault_eagleaiii_ocp";
+};
+```
+Below is an example of how the respawn menu looks.  Selecting a role in the middle changes what loadouts are available in the drop down on the right.
+![Example respawn selection menu.](image.png)
