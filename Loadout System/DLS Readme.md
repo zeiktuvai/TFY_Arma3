@@ -21,6 +21,26 @@ The following steps will walk you through using the DLS:
     - respawnLoadouts is an array of strings, include the class name of the loadouts you want that unit to have access to when respawning. Can be one or multiple separated by commas.
     - Leave the last line alone.
 
+> NOTE: Make sure you update the contents of the `Respawn_Config.cfg` to import the loadouts that you want to use.
+  - To use the standard roles, you only need to include `loadouts\Roles_standard.c` under `CfgRoles`.
+  - Make sure you choose only one standard set of loadouts under `CfgRespawnInventory`; either `Loadouts_standard.c` or `Loadouts_standard_night.c`. They use the same class name so a conflict will occur if you include both of them.
+  - To make use of the Special forces roles just add `loadouts\Roles_SF.c` to `CfgRoles` and `loadouts\Loadouts_SF.c` to `CfgRespawnInventory`.
+  - As we add more loadouts they will be in separate loadout files, however they may use the same role file.  (i.e. Adding a russian loadout file for russian equipment but they use the standard roles.)
+    ```c
+        class CfgRoles
+        {
+            #include "loadouts\Roles_standard.c"
+            #include "loadouts\Roles_SF.c"
+        };
+
+
+        class CfgRespawnInventory
+        {
+            #include "loadouts\Loadouts_standard.c"
+            #include "loadouts\Loadouts_SF.c"
+        };
+    ```
+
 **Loadout List**
 
 - TFY_Commander
