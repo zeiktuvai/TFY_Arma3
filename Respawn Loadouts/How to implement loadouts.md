@@ -10,11 +10,11 @@
 4. On each player you will need to add the following into the init field:
     ```c 
     //Faction name (ie east, west, etc), Name of loadout class from loadout file
-    [FACTION(west,east,independant,etc), LOADOUT NAME] call BIS_fnc_addRespawnInventory;
+    [this, LOADOUT NAME] call BIS_fnc_addRespawnInventory;
     ```
     ```c 
     // example
-    [west, "TFY_Autorifleman"] call BIS_fnc_addRespawnInventory;
+    [this, "TFY_Autorifleman"] call BIS_fnc_addRespawnInventory;
     ```
     - If you want that player to have access to more than one, just add a new line with the same code but change the loadout class name to the one you want.
 
