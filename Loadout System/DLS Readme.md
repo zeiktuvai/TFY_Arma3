@@ -27,20 +27,20 @@ The following steps will walk you through using the DLS:
 >  - To make use of the Special forces roles just add `loadouts\Roles_SF.c` to `CfgRoles` and `loadouts\Loadouts_SF.c` to `CfgRespawnInventory`.
 >  - As we add more loadouts they will be in separate loadout files, however they may use the same role file.  (i.e. Adding a russian loadout file for russian equipment but they use the standard roles.)
 
-    ```c
-        class CfgRoles
-        {
-            #include "loadouts\Roles_standard.c"
-            #include "loadouts\Roles_SF.c"
-        };
+```c
+    class CfgRoles
+    {
+        #include "loadouts\Roles_standard.c"
+        #include "loadouts\Roles_SF.c"
+    };
 
 
-        class CfgRespawnInventory
-        {
-            #include "loadouts\Loadouts_standard.c"
-            #include "loadouts\Loadouts_SF.c"
-        };
-    ```
+    class CfgRespawnInventory
+    {
+        #include "loadouts\Loadouts_standard.c"
+        #include "loadouts\Loadouts_SF.c"
+    };
+```
 
 **Loadout List**
 
