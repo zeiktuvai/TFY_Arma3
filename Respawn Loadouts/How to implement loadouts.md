@@ -1,5 +1,7 @@
 # How to implement selectable loadouts on respawn
 
+> It is suggested that you use the Dynamic Loadout System referenced [Here](/Loadout%20System/DLS%20Readme.md)
+
 1. Copy the loadouts folder into your mission folder.
 2. Make sure your `description.ext` contains the content from the [description.ext](/Respawn%20Loadouts/description.ext) in this folder.
 3. Modify the **Roles** and **Loadouts**.
