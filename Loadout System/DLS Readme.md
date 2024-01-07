@@ -7,7 +7,7 @@ It achieves this through adding and retrieving variables to the unit object in E
 The following steps will walk you through using the DLS:
 
 1. Download the loadouts folder from [here](/Respawn%20Loadouts/loadouts/) and place them in your mission folder.
-2. Download the contents of this folder into your mission folder.
+2. Download the contents of [this](/Loadout%20System/) folder into your mission folder.
 3. Modify your `description.ext` to have the following code at the top: `#include "Respawn_Config.cfg"`.
     - WARNING: Make sure your `description.ext` doesn't have any respawn properties in it, also make sure class CfgRoles and CfgRespawnInventory is not in the file.
     - If you already have an initPlayerLocal.sqf in your mission folder, you may need to combine the contents of both files into one.
