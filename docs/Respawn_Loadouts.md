@@ -65,7 +65,7 @@ class TFY_Commander
 };
 ```
 Below is an example of how the respawn menu looks.  Selecting a role in the middle changes what loadouts are available in the drop down on the right.
-![Example respawn selection menu.](img/respawn.png)
+![Example respawn selection menu.](/img/respawn.png)
 
 **Roles**
 You do not need to add any roles unless there are none that fit the loadout you made.  Below is an example role:
@@ -80,7 +80,7 @@ class TFY_Assault
     icon = "a3\ui_f\data\gui\cfg\respawnroles\assault_ca.paa";
 };
 ```
-![Arma Role Icons](img/role_icons.png)
+![Arma Role Icons](/img/role_icons.png)
 
 # Using these loadouts on mission start
 
