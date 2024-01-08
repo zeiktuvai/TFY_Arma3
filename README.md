@@ -1,8 +1,5 @@
 # TFY_Arma3
-Code Repo for Arma 3 scenarios.
+Code Repo and readme for Arma 3 scenarios.
 
 # Dynamic Loadout System
-see [Here]()
-
-# Task Force Yodel Respawn Loadouts
-See [Here]()
+see [Here](https://github.com/zeiktuvai/TFY_DLS_Arma3)
