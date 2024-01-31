@@ -2,7 +2,7 @@
 Code Repo and readme for Arma 3 scenarios.
 
 # TOC
-- [Dynamic Loadout System](https://github.com/zeiktuvai/TFY_DLS_Arma3)
+- [Mission Support Framework](https://github.com/zeiktuvai/MSF_Arma_3)
 - [Creating Respawn Loadouts](/docs/respawn/Respawn_Loadouts.md)
 - [Selecting Respawn Location](/docs/respawn/Select_Respawn_pos.md)
 - [Finding the mission folder](#finding-your-mission-root-folder)
